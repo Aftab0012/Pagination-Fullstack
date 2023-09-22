@@ -7,7 +7,7 @@ const cors = require("cors");
 const router = require("./routes/dataRoute");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3030;
 
 const DB_URI = process.env.MONGOOSE_URL;
 mongoose
