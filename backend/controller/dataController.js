@@ -18,7 +18,7 @@ async function getAllUsers(req, res) {
     });
   } catch (error) {
     console.error("Error fetching items:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "fetching user failed" });
   }
 }
 
