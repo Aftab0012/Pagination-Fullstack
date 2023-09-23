@@ -3,6 +3,7 @@ import "./App.css";
 import Pagination from "./Components/Pagination";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
+import LoadingAnimation from "./Animation/Animation";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -14,7 +15,7 @@ function App() {
   const backendUrl = "https://pagination-backend23.onrender.com/api";
   // const backendUrl = "http://localhost:5000/api";
 
-  console.log(page);
+  // console.log(page);
 
   //fetching user data from backend
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
         );
         setUsers(response.data.user);
         setTotalPages(response.data.totalPages);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
         console.log(error);
       }
@@ -44,11 +45,11 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center h-screen space-y-2 text-white bg-black">
       {users.length === 0 && (
-        <div className="text-4xl font-bold text-white">
-          Please wait, Backend is Starting...
+        <div className="text-4xl font-bold">
+          <LoadingAnimation />
         </div>
       )}
-      {console.log(users)}
+      {/* {console.log(users)} */}
       <ul className="min-h-[60vh] text-white text-3xl">
         {users.map((user) => (
           <li key={user._id} className="font-medium">
