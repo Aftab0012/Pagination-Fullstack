@@ -2,20 +2,20 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 function Pagination({ totalPages, onPageChange, currentPage, page }) {
-  const maxVisibleButtons = 5; // Maximum number of visible buttons
+  const maxVisibleButtons = 5; // Maximum number of visible buttons to appear
   const pageNumbers = [];
   const navigate = useNavigate();
 
-  // Calculate the range of buttons to display
+  // Calculating the range of buttons to display
   let start = Math.max(1, currentPage - Math.floor(maxVisibleButtons / 2));
   let end = Math.min(totalPages, start + maxVisibleButtons - 1);
 
-  // Handle edge cases
+  // Handling edge cases
   if (end - start + 1 < maxVisibleButtons) {
     start = Math.max(1, end - maxVisibleButtons + 1);
   }
 
-  // Add buttons for each page in the range
+  // Adding buttons for each page in the range
   for (let i = start; i <= end; i++) {
     pageNumbers.push(i);
   }
