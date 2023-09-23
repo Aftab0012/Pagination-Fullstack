@@ -43,6 +43,12 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen space-y-2 text-white bg-black">
+      {users.length === 0 && (
+        <div className="text-4xl font-bold text-white">
+          Please wait, Backend is Starting...
+        </div>
+      )}
+      {console.log(users)}
       <ul className="min-h-[60vh] text-white text-3xl">
         {users.map((user) => (
           <li key={user._id} className="font-medium">
