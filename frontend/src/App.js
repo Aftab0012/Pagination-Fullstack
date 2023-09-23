@@ -16,8 +16,9 @@ function App() {
 
   console.log(page);
 
+  //fetching user data from backend
   useEffect(() => {
-    const getProducts = async () => {
+    const fetchUsers = async () => {
       try {
         const response = await axios.get(
           `${backendUrl}/users?page=${currentPage}`
@@ -30,9 +31,10 @@ function App() {
       }
     };
 
-    getProducts();
+    fetchUsers();
   }, [currentPage]);
 
+  //handling page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
     navigate(`/users/${pageNumber}`);
