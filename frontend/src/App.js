@@ -11,7 +11,7 @@ function App() {
   const [totalPages, setTotalPages] = useState(0);
   const navigate = useNavigate();
 
-  const backendUrl = "https://pagination-backend3.onrender.com/api";
+  const backendUrl = "https://pagination-backend23.onrender.com/api";
   // const backendUrl = "http://localhost:5000/api";
 
   console.log(page);
